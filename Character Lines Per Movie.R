@@ -28,12 +28,13 @@ topmovie1 %>%
   ggplot(aes(char, Freq, fill = char))+
   geom_col()+
   scale_fill_brewer(palette = "Paired")+
-  labs(title = "Philosopher's Stone - Lines per Character", y = "Total Lines", x = "")+
+  labs(title = "Philosopher stone - Lines per Character", y = "Total Lines", x = "")+
   theme_ft_rc()+
-  theme(axis.text.x = element_text(vjust = 0 , hjust = 1, angle = 90, size = 8),
+  theme(axis.text.x = element_text(size = 10),
         legend.position = "none",
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        axis.text.x.bottom = element_text(color = "white"))
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        axis.text = element_text(color = "white"))+
+  coord_flip()
 
 ggsave("Philosopher stone - #LinesPerCharacter.png")
